@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원 -->
+<mapper namespace="UsersDAO">
+	
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*) FROM USERS WHERE u_id=#{u_id}
+	</select>
+	<select id="loginCheck" resultType="int">
+		SELECT COUNT(*) FROM USERS WHERE u_id=#{u_id} AND u_pw=#{u_pw}
+	</select>
+	
+ 	<insert id="insertUser">
+		INSERT INTO USERS(u_code,u_id,u_pw,u_name,u_phone,u_email,u_birth) VALUES(u_code_seq.nextval,#{u_id},#{u_pw},#{u_name},#{u_phone},#{u_email},#{u_birth})
+	</insert>
+	
+	<select id="idFind" resultType="String">
+		SELECT u_id FROM USERS WHERE u_name=#{u_name} AND u_phone=#{u_phone} AND u_birth=#{u_birth}
+	</select>
+	
+	<select id="pwFind" resultType="int">
+		SELECT COUNT(*) FROM USERS WHERE u_id=#{u_id} AND u_email=#{u_email}
+	</select>
+	
+	<update id="updatePw">
+		UPDATE USERS SET u_pw=#{u_pw} WHERE u_id='u_4'
+	</update>
+
+	<update id="updateUser">
+		UPDATE USERS SET u_pw=#{u_pw},u_name=#{u_name},u_phone=#{u_phone},u_email=#{u_email},u_birth=#{u_birth} WHERE u_id=#{u_id}
+	</update>
+	
+	<delete id="deleteUser">
+		DELETE USERS WHERE u_id=#{u_id}
+	</delete>
+	
+	<select id="getUser" resultType="users">
+		SELECT * FROM USERS WHERE u_id=#{u_id}
+	</select> 
+	
+	<select id="getUserList" resultType="users">
+		select * from users
+	</select>
+
+</mapper>

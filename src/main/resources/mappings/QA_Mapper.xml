@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="QaDAO">
+	
+	
+<!-- 무비포스트 -->
+<select id="getQalist" resultType="Qa">
+		select * from qa
+		order by q_code asc
+</select>
+
+<select id="getQa" resultType="Qa">
+	select * from qa
+	where q_code = #{q_code}
+	order by q_code asc
+</select>
+
+
+</mapper>
+

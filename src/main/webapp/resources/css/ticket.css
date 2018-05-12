@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#ticket_left{
+	width : 250px;
+	float : left;
+	border : solid 2px orange;
+}
+
+#ticket_right{
+	width : 850px;
+	float : right;
+	padding : 15px 30px;
+	border : solid 1px green;
+}/* 
+table{
+	border:solid 1px black;
+} */
+#t_table ul{
+	list-style: none;
+}
+#t_table{
+	margin:auto;
+	width:1300px;
+	border:solid 1px black;
+}
+#t_table th{
+	height: 50px;
+	text-align: center;
+	background-color: white;
+}
+
+#c_loc{
+	width:40%;
+	border:solid 1px black;
+}
+#c_name{
+	width:60%;
+	border:solid 1px black;
+}
+
+.tail{
+   margin:auto;
+   width:1200px;
+   background: #ffffe6 ;
+   color:black;
+   text-size:20px;
+}
+.tail div{
+   display: inline-block;
+   height: 150px;   
+}

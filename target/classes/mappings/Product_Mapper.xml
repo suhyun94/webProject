@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="productDAO">
+	
+	
+<!-- 상품 -->
+<select id="getProductList" resultType="product">
+		select * from PRODUCT
+		<if test="p_type != null">where p_type = #{p_type}</if>
+		order by p_code asc
+</select>
+
+<select id="getProductListA" resultType="product">
+		select * from PRODUCT
+		 where p_type = 'A'
+		order by p_code asc
+</select>
+
+
+<select id="getProductListB" resultType="product">
+		select * from PRODUCT
+		 where p_type = 'B'
+		order by p_code asc
+</select>
+
+
+<select id="getProductListC" resultType="product">
+		select * from PRODUCT
+		 where p_type = 'C'
+		order by p_code asc
+</select>
+
+
+
+
+
+
+<select id="getProduct" resultType="product">
+ select * from PRODUCT
+ where p_code = #{p_code}
+</select>
+
+</mapper>
+

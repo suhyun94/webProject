@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+
+/* 중앙으로 위치할때 쓰는거 */
+#t1 {
+	margin: auto;
+	width: 500px;
+}
+
+    .swiper-container2 {
+      width: 600px;
+      height: 500px;
+      position: absolute;
+      left: 20%;
+      top: 50%;
+/*       margin-left: 50px;
+      margin-top: 50px; */
+     
+    }
+    .swiper-slide2 {
+      background-position: center;
+      background-size: cover;
+      
+    }
+    .scorelist{
+    background :white;
+    width: 500px;
+    height: 500px;
+    }
+    
+    #score{
+    display: inline-block;
+    }
+    #left{
+    	width: 200px;
+    	float:left;
+    }
+    #right{
+    	width:350px;
+    	float:right;
+    	background-color: lightblue;
+    }
+    
+   

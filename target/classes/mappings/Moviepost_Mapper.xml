@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="moviepostDAO">
+<!-- <resultMap type="" id="">
+
+</resultMap> -->
+	
+<!-- 무비포스트 -->
+<select id="getMoviepostList" resultType="moviepost">
+		select * from MOVIEPOST 
+		where mp_title like '%'||#{searchKeyword}||'%'
+		order by MP_CODE asc
+</select>
+
+<select id="getMoviepost" resultType="moviepost">
+	select * from MOVIEPOST where MP_CODE=#{MP_CODE}
+</select>
+
+<insert id="insertMoviepost">
+	insert into moviepost(MP_CODE,MP_TITLE,MP_DATE,MP_LIKE,M_CODE,U_CODE,MP_CONTENT)
+	values(MP_CODE_SEQ.NEXTVAL,#{MP_TITLE},'2018-04-05',0,#{M_CODE},18,#{MP_CONTENT})
+</insert>
+
+<update id="updateMoviepost"> 
+	UPDATE moviepost SET MP_TITLE='aa',MP_CONTENT=#{MP_CONTENT}
+	WHERE MP_CODE=#{MP_CODE}
+</update>
+
+
+<update id="likeup">
+UPDATE moviepost
+        SET
+          mp_like = mp_like +1
+        WHERE MP_CODE = #{MP_CODE}      
+</update>
+
+
+<delete id="deleteMoviepost">
+	delete moviepost where MP_CODE = #{MP_CODE}
+</delete>
+
+<select id="reply" resultType="mpr">
+	select u.U_ID,mr.MPR_CONTENT from mp_reply mr,users u,moviepost mp 
+	where mr.mp_code=mp.mp_code 
+	and mr.u_code=u.u_code
+	and mp.mp_code = #{mp_code}
+</select>
+
+</mapper>
+

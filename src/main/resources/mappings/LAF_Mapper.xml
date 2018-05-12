@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LafDAO">
+	
+	
+<!-- 무비포스트 -->
+<select id="getLaflist" resultType="Laf">
+		select * from laf
+		order by l_number asc
+</select>
+
+<select id="getLaf" resultType="Laf">
+	select * from laf
+	where l_number = #{l_number}
+	order by l_number asc
+</select>
+
+
+</mapper>
+

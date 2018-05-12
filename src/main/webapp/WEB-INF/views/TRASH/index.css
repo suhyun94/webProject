@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+body{
+	heigth:100%; 
+	background-color:#ffeecc; /* 색상 더 생각해보기  */
+}
+
+	
+/* 모달창 */	
+	.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modal:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modal > div {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+
+	border: 16px solid orange;
+	
+	overflow: auto;	
+}
+
+
+/*  퀵메뉴 */
+
+.bms-quick-banner{
+	position: fixed;
+	right: calc((100% - 1425px)/ 2 - 150px);
+	width: 190px;
+	height: 60px;
+	z-index: 9999;
+	top: 151px;
+	background: lightblue;
+}
+.bms-quick-banner > ul > li{
+	list-style: none;
+}
+
+/* 비주얼 배너 이미지 사이즈 조정하자 개졸립네아*/
+
+자로099*/

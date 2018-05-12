@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+body{
+	background-color:#eaeaea;
+}
+a{
+	text-decoration: none;
+}
+#section{
+	width: 1500px;
+	height:1600px;
+	margin:auto;
+}
+	
+/* 모달창 	
+	.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modal:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modal > div {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	border: 16px solid orange;	
+	overflow: auto;	
+}
+*/
+/*  퀵메뉴 */
+.bms-quick-banner{
+	position: fixed;
+	right: calc((100% - 1425px)/ 2 - 200px);
+	width: 150px;
+	height: 200px;
+	z-index: 9999;
+	top: 250px;
+	
+}
+.bms-quick-banner > ul > li{
+	list-style: none;
+}

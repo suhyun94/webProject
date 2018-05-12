@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.store{
+border: 1px solid;
+width:15%;
+margin:5px;
+display: inline-block;
+text-align: center;
+
+}
+ 
+ 
+ 
+ 
+#pop {
+  background-image : url('../images/store/popcorn.png'); 
+  background-position:top right; 
+  background-repeat:no-repeat;
+  }
+  
+#coke {
+  background-image : url('../images/store/soda.png'); 
+  background-position:top right; 
+  background-repeat:no-repeat;
+  }
+  
+  #ticket {
+  background-image : url('../images/store/two-tickets.png'); 
+  background-position:top right; 
+  background-repeat:no-repeat;
+  }  
+  
+ 	
+ #center{
+ margin: auto;
+	width: 500px;
+ } 
+ 	

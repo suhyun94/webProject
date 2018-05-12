@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 예매 -->
+<mapper namespace="TicketingDAO">
+	<!-- 
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*) FROM USERS WHERE u_id=#{u_id} AND u_pw=#{u_pw}
+	</select>
+	<delete id="deleteUser">
+		DELETE USERS WHERE u_id=#{u_id}
+	</delete>
+	 -->
+	<select id="ticketChoose" resultType="ticketChoose" >
+		SELECT s.s_code,m.m_code,t.th_code,c.c_code,s.s_date,s.s_seat_rest,s.s_start_time,c.c_name,m.m_title,m.m_runningtime,t.th_row,t.th_col,t.th_num
+		FROM screeninfo s, movie m, theater t, cinema c
+   		WHERE s.m_code=m.m_code
+    	AND s.th_code=t.th_code
+    	AND t.c_code=c.c_code
+    	AND s.s_date=#{s_date}
+    	AND s.m_code=#{m_code}
+    	AND s.th_code IN(SELECT th_code FROM theater WHERE c_code=#{c_code})
+	</select>
+	
+	<select id="ticketLoc" resultType="cinema">
+		SELECT * FROM CINEMA WHERE c_loc=#{c_LOC}
+	</select> 
+	
+	<select id="getStNum" resultType="String">
+		SELECT st_num FROM seat WHERE s_code=#{s_code}
+	</select>
+	
+ 	<insert id="insertTicket">
+		INSERT INTO ticketing VALUES(T_CODE_SEQ.NEXTVAL,SYSDATE,#{t_num},#{t_price},default,#{s_code},#{u_code})
+	</insert>
+	
+	<update id="updateScreenInfo">
+		UPDATE seat SET st_num=#{st_num} WHERE s_code=#{s_code}
+	</update>
+
+</mapper>

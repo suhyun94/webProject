@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CloudDAO">
+
+<!-- <resultMap type="movie" id="movieResult">
+	<result property="m_CODE" column="M_CODE"/>
+	<result property="m_TITLE" column="M_TITLE" />
+	<result property="m_GRADE" column="M_GRADE" />
+	<result property="m_ACTOR" column="M_ACTOR" />
+	<result property="m_DIRECTOR" column="M_DIRECTOR" />
+	<result property="m_GENRE" column="M_GENRE" />
+	<result property="m_START_DATE" column="M_START_DATE" />
+	<result property="m_RUNNINGTIME" column="M_RUNNINGTIME" />
+	<result property="m_VIEWER_NUM" column="M_VIEWER_NUM" />
+	<result property="m_CONTENT" column="M_CONTENT" />
+	<result property="m_IMAGE" column="M_IMAGE" />
+	<result property="m_TRAILER" column="M_TRAILER" />
+</resultMap>	 -->
+	
+	
+<!-- 클라우등! -->
+
+
+<insert id="insertcloud">
+	INSERT INTO CLOUDBOARD(CB_CODE,CB_CONTENT,cb_directorscore,cb_storyscore,cb_actorscore,cb_goodscore)
+	values(cb_code_seq.nextval,#{cb_content},#{cb_directorscore},#{cb_storyscore},#{cb_actorscore},#{cb_goodscore})
+</insert>
+	
+<select id="getCloudList" resultType="cloudbd">
+ 		select * from cloud
+ 		order by cl_code asc
+	</select>
+	
+<select id="getCloudMovieList" resultType="cloud">
+select c.m_code,c.cl_code,c.cl_reply,c.cl_directorscore,c.cl_storyscore,c.cl_actorscore,c.cl_goodscore,c.cl_like,m.m_title,m.m_grade,m.m_image
+from cloud c inner join movie m on c.m_code = m.m_code
+</select>
+
+<select id="getreplylist" resultType="cloudbd">
+ 	select u.u_id,cb.cb_content
+	from cloudboard cb inner join users u on cb.u_code = u.u_code
+	
+	
+</select>
+
+<!-- select * from CLOUDBOARD
+ order by cb_code -->
+	
+
+</mapper>
+

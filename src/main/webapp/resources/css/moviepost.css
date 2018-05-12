@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+#box{
+	width : 1300px;
+	text-align: center;
+	margin: auto;
+}
+.space {
+		width: 20%; height: 510px;
+        border: 1px solid black; padding: 5px;
+        margin: 10px;
+        float: left;
+        
+        /*clear: both;*/
+
+}
+
+.space img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+#like img{
+	width:25px;
+/* 	float: left; */
+	display: inline;
+}
+
+
+#t1{
+	margin: auto;
+	width: 500px;
+}
+
+

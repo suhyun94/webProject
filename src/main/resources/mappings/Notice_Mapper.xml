@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="noticeDAO">
+	
+	
+<!-- 무비포스트 -->
+<select id="getNoticelist" resultType="notice">
+		select * from notice
+		order by n_code asc
+</select>
+
+<select id="getNotice" resultType="notice">
+	select * from notice
+	where n_code = #{n_code}
+</select>
+
+
+</mapper>
+

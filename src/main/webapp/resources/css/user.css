@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/* 아이디/비번 찾기 */
+.findBox{
+	width:500px;
+	margin:20px 70px;
+	display: inline-block;
+}
+
+#mypage_menu{
+	width: 30%;
+	float: left;
+}
+
+#mypage_content{
+	width: 70%;
+	float: right;
+}
