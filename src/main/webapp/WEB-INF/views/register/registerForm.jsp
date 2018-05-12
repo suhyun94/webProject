@@ -89,7 +89,7 @@
 <body>
 <div id="section">
 	<h2>회원가입폼</h2>
-	
+	<div>hhh</div>
 	<!-- Modal -->
 	<div class="modal fade" id="checkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="vertical-alignment-helper">
